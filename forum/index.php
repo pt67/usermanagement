@@ -38,8 +38,14 @@ move_uploaded_file($_FILES['image']['tmp_name'], $target);
 <html>
 <head>
 <title>My app</title>
+<link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
+<header>
+<div class="logo">
+<?php echo "<h1>Colin</h1>"; ?>
+</div>
+
 <nav>
 <a href="/">Home</a>
 <a href="/forum">Forum</a>
@@ -52,14 +58,20 @@ move_uploaded_file($_FILES['image']['tmp_name'], $target);
 <?php endif; ?>
 </nav>
 
+</header>
+
+
+<section>
+
+<article>
+<?php if(isset($_SESSION['user'])): ?>
+<form method="POST" action="#" enctype="multipart/form-data">
 
 <?php
 echo "<h1> Forum</h1>";
 
 ?>
 
-<?php if(isset($_SESSION['user'])): ?>
-<form method="POST" action="#" enctype="multipart/form-data">
 <input type="text" name="post_title" placeholder="Post Title"/><br>
 <input type="file" name="image"/><br>
 <textarea rows="5" cols="28" placeholder="Write your problems.." name="write_post"></textarea><br>
@@ -67,6 +79,7 @@ echo "<h1> Forum</h1>";
 </form>
 <?php endif;  ?>
 
+</article>
 <!-- Posts title -->
 <h3>Top Posts</h3>
 
@@ -86,6 +99,6 @@ while($row = mysqli_fetch_assoc($post_result)){
 <img src= "forum/pics/<?php echo $row['image']; ?>" height="100px"  width="100px"/>
 
 <?php } ?>
-
+</section>
 </body>
 </html>

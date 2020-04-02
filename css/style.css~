@@ -1,0 +1,97 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: sans-serif;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+background:#e0f;
+padding:0% 10%;
+box-shadow: 3px 3px 0px 0px red;
+border-radius:2px;
+}
+
+.logo{
+padding:20px;
+background:red;
+}
+
+.logo h1{
+color:#fff;
+}
+
+nav{
+padding:20px;
+margin-top:5px;
+}
+
+nav a{
+text-decoration: none;
+padding-left:10px;
+color: #fff;
+font-weight: bold;
+}
+
+nav a:hover{
+color:#333;
+}
+
+section{
+padding:5% 10%;
+}
+
+ul{
+padding:10px;
+}
+
+ul li{
+list-style: none;
+background:#faf;
+padding:5px;
+border-left:2px solid #333; 
+}
+
+article{
+padding:2% 0%;
+float:right;
+}
+
+form{	
+padding:20px;
+-webkit-box-shadow: 7px 9px 55px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: 7px 9px 55px -7px rgba(0,0,0,0.75);
+box-shadow: 7px 9px 55px -7px rgba(0,0,0,0.75);
+}
+
+form input{
+margin-top:5px;
+}
+
+form input[type="submit"]{
+background:#e0f;
+padding:10px;
+color:#fff;
+border-radius:10px;
+font-weight: bold;
+}
+
+form p{
+padding:10px;
+}
+form a{
+text-decoration: none;
+color:#e0f;
+padding-left:10px;
+}
+form textarea {
+margin-top:5px;
+padding:10px;
+}
+
+
+
+
+

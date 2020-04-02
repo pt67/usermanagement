@@ -21,8 +21,13 @@ if ($con->connect_error) {
 <html>
 <head>
 <title>My app</title>
+<link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
+<header>
+<div class="logo">
+<?php echo "<h1>Colin</h1>"; ?>
+</div>
 <nav>
 <a href="/">Home</a>
 <a href="/forum">Forum</a>
@@ -36,12 +41,15 @@ if ($con->connect_error) {
 </nav>
 
 
+</header>
+
+<section>
 <?php
 echo "<h1> Forum</h1>";
 
 ?>
 <!-- Posts title -->
-<h3>Top Posts</h3>
+
 
 <?php
 if(isset($_GET['id'])){
@@ -58,11 +66,11 @@ while($row = mysqli_fetch_assoc($post_result)){
 ?>
 
 <h5><?php  echo $row['post_title'];  ?></h5>
-<img src= "../forum/pics/<?php echo $row['image']; ?>" height="100px"  width="100px"/>
+<img src= "../forum/pics/<?php echo $row['image']; ?>" height="200px"  width="200px"/>
 <p><?php echo $row['post']; ?></p>
 <?php }} ?>
 
-
+</section>
 </body>
 </html>
 

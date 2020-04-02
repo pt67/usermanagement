@@ -19,8 +19,13 @@ if ($con->connect_error) {
 <html>
 <head>
 <title>My app</title>
+<link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
+<header>
+<div class="logo">
+<?php echo "<h1>Colin</h1>"; ?>
+</div>
 <nav>
 <a href="/">Home</a>
 <a href="/forum">Forum</a>
@@ -32,17 +37,29 @@ if ($con->connect_error) {
 <a href="/signup">Signup</a>
 <?php endif; ?>
 </nav>
+</header>
+
+
+
+<section>
+<b>Users List</b>
+
 <?php
 
-echo "<h1>Colin</h1>";
-echo "<b>Users List</b> <br>";
+
 
 $sql = "SELECT * FROM users";
 $result = mysqli_query($con, $sql);
 while($row=mysqli_fetch_assoc($result)){
-echo $row['name'] ."<br>";
-}
 ?>
+<ul>
+<li><?php echo $row['name'];  ?></li>
+</ul>
+<?php } ?>
+</section>
+
+
+
 </body>
 </html>
 <?php

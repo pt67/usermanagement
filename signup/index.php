@@ -37,8 +37,17 @@ $_SESSION['profile'] = $uname;
 <html>
 <head>
 <title>My app</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<header>
+
+<div class="logo">
+
+<?php echo "<h1>Colin</h1>"; ?>
+</div>
+
 <nav>
 <a href="/">Home</a>
 <a href="/forum">Forum</a>
@@ -50,20 +59,40 @@ $_SESSION['profile'] = $uname;
 <a href="/signup">Signup</a>
 <?php endif; ?>
 </nav>
+</header>
 
+
+<section>
+
+
+<article>
+
+<form method="POST" action="#">
 <?php
 
 echo "<h1>Signup</h1>";
 
 ?>
-
-<form method="POST" action="#">
 <input type="text" placeholder="Full Name" name="fname" required/><br>
 <input type="text" placeholder="username" name="uname" required/><br>
 <input type="email" placeholder="Email" name="email"/ required><br>
 <input type="password" placeholder="Password" name="password" required/><br>
 <input type="submit" value="Sign Up" name="submit"/>
+<p>Already have a account? </p>
+<a href="/login">Login</a>
+
+
 </form>
+
+
+</article>
+
+
+
+
+
+</section>
+
 
 
 

@@ -21,8 +21,13 @@ if ($con->connect_error) {
 <html>
 <head>
 <title>My app</title>
+<link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
+<header>
+<div class="logo">
+<?php echo "<h1>Colin</h1>"; ?>
+</div>
 <nav>
 <a href="/">Home</a>
 <a href="/forum">Forum</a>
@@ -34,8 +39,10 @@ if ($con->connect_error) {
 <a href="/signup">Signup</a>
 <?php endif; ?>
 </nav>
+</header>
 
 
+<section>
 <?php
 
 echo "<h1>Account</h1>";
@@ -52,9 +59,14 @@ $getdata = "SELECT * FROM users WHERE username='$data'";
 $result = mysqli_query($con, $getdata);
 
 while($row = mysqli_fetch_assoc($result)) {
-	echo "Name: ". $row['name'] . "<a href=''> Edit</a>". "<br>" ."Email: ". $row['email'];
-}
+
 ?>
 
+<ul>
+<li>Name : <?php  echo $row['name']; ?> <a href="#">Edit</a></li>
+<li>Email : <?php  echo $row['email']; ?></li>
+</ul>
+<?php } ?>
+</section>
 </body>
 </html>
